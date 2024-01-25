@@ -18,7 +18,7 @@ using namespace std;
 //    }
 //
 //};
-
+//
 //int main()
 //{
 //    Product product1;
@@ -28,8 +28,8 @@ using namespace std;
 //    product1.print();
 //}
 
-// Lab 1
-// Task 1 - 2 
+ /*Lab 1
+ Task 1 - 2*/ 
 //double power(double n, int p=2);
 //
 //int main() {
@@ -38,23 +38,30 @@ using namespace std;
 //    int n3;
 //    long n4;
 //    float n5;
+//    short n6;
 //    int p;
+//    double result;
 //    cout << "---------- Task 1 ----------\n";
 //    cout << "Enter base: \n";
 //    cin >> n;
-//    cout << "Enter exponent: \n";
-//    cin >> p;
-//    double result = power(n, p);
-//    cout<<"Result: "<<result<<"\n\n";
 //
-//    double defResult = power(n);
-//    cout << "Default result with exponent 2: " << defResult << "\n\n";
+//    cout << "Do you want to enter the exponent? (Enter 0 for default, any other number for custom): ";
+//    cin >> p;
+//
+//    if (p != 0) {
+//        cout << "Enter exponent: ";
+//        cin >> p;
+//        result = power(n, p);
+//    }
+//    else result = power(n);
+//    cout<<"Result: "<<result<<"\n\n";
 //
 //
 //    cout << "---------- Task 2 ----------\n";
 //    cout << "char\n";
 //    cout << "Enter base: \n";
 //    cin >> n2;
+//    cout << "ASCII value of entered char: " << static_cast<int>(n2) << "\n";
 //    cout << "Enter exponent: \n";
 //    cin >> p;
 //     result = power(n2, p);
@@ -67,6 +74,15 @@ using namespace std;
 //    cin >> p;
 //    result = power(n3, p);
 //    cout << "Result: " << result << "\n\n";
+//
+//    cout << "short\n";
+//    cout << "Enter base: \n";
+//    cin >> n6;
+//    cout << "Enter exponent: \n";
+//    cin >> p;
+//    result = power(n6, p);
+//    cout << "Result: " << result << "\n\n";
+//
 //
 //    cout << "long\n";
 //    cout << "Enter base: \n";
@@ -95,28 +111,35 @@ using namespace std;
 //    return result;
 //}
 //
-//double power(char n, int p) {
+//double power(char n, int p=2) {
 //    double result = 1.0;
 //    for (int i = 0; i < p; i++) {
 //        result *= n;
 //    }
 //    return result;
 //}
-//double power(int n, int p) {
+//double power(int n, int p=2) {
 //    double result = 1.0;
 //    for (int i = 0; i < p; i++) {
 //        result *= n;
 //    }
 //    return result;
 //}
-//double power(long n, int p) {
+//double power(short n, int p = 2) {
 //    double result = 1.0;
 //    for (int i = 0; i < p; i++) {
 //        result *= n;
 //    }
 //    return result;
 //}
-//double power(float n, int p) {
+//double power(long n, int p=2) {
+//    double result = 1.0;
+//    for (int i = 0; i < p; i++) {
+//        result *= n;
+//    }
+//    return result;
+//}
+//double power(float n, int p=2) {
 //    double result = 1.0;
 //    for (int i = 0; i < p; i++) {
 //        result *= n;
@@ -124,7 +147,7 @@ using namespace std;
 //    return result;
 //}
 
-// Task 3
+ //Task 3
 struct Employee {
 public:
 	    int id;
@@ -173,7 +196,7 @@ struct Factory {
         }
     }
 
-    void countEmployees() const {
+    pair<int, int>  countEmployees() const {
         int countLocksmith = 0;
         int countTurner = 0;
 
@@ -188,6 +211,7 @@ struct Factory {
 
         cout << "Number of locksmiths at the " << name << " factory: " << countLocksmith << endl;
         cout << "Number of turners at the " << name << " factory: " << countTurner << endl;
+        return { countLocksmith, countTurner };
     }
 };
 
@@ -200,13 +224,19 @@ int main() {
     for (int i = 0; i < N; ++i) {
         cout << "Enter the name of factory " << i + 1 << ": ";
         cin >> factories[i].name;
-
         factories[i].inputEmployees();
+        cout << endl;
     }
-
+    int locksmith=0, turner=0;
+   
     for (const auto& factory : factories) {
-        factory.countEmployees();
+        pair<int, int> counts = factory.countEmployees();
+        locksmith += counts.first;
+        turner += counts.second;
+        cout << endl;
     }
+    cout << "Number of locksmiths: " << locksmith << endl;
+    cout << "Number of turners: " << turner << endl;
 
     return 0;
 }
