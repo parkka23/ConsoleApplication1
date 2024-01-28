@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 //class Product {
 //public:
 //    int id;
@@ -28,10 +29,10 @@ using namespace std;
 //    product1.print();
 //}
 
- /*Lab 1
- Task 1 - 2*/ 
+// Lab 1
+// Task 1 - 2
+ 
 //double power(double n, int p=2);
-//
 //int main() {
 //    double n;
 //    char n2;
@@ -146,97 +147,98 @@ using namespace std;
 //    }
 //    return result;
 //}
-
- //Task 3
-struct Employee {
-public:
-	    int id;
-	    string surname;
-		int age;
-		string position;
-		double averageSalary;
-
-	
-	    void print() {
-	        cout << "id: " << id << "\n";
-	        cout << "surname: " << surname<<"\n";
-			cout << "age: " << age << "\n";
-	        cout << "position: " << position << "\n";
-			cout << "average salary: " << averageSalary << "\n";
-	
-	    }
-
-};
-
-struct Factory {
-    string name;
-    vector<Employee> employees;
-
-    void inputEmployees() {
-        int n;
-        cout << "Enter the number of employees at the " << name << " factory: ";
-        cin >> n;
-
-        for (int i = 0; i < n; ++i) {
-            Employee employee;
-
-            cout << "Enter information for employee " << i + 1 << ":\n";
-            cout << "ID: ";
-            cin >> employee.id;
-            cout << "Surname: ";
-            cin >> employee.surname;
-            cout << "Age: ";
-            cin >> employee.age;
-            cout << "Position: ";
-            cin >> employee.position;
-            cout << "Average Salary: ";
-            cin >> employee.averageSalary;
-
-            employees.push_back(employee);
-        }
-    }
-
-    pair<int, int>  countEmployees() const {
-        int countLocksmith = 0;
-        int countTurner = 0;
-
-        for (const auto& employee : employees) {
-            if (employee.position == "locksmith") {
-                countLocksmith++;
-            }
-            else if (employee.position == "turner") {
-                countTurner++;
-            }
-        }
-
-        cout << "Number of locksmiths at the " << name << " factory: " << countLocksmith << endl;
-        cout << "Number of turners at the " << name << " factory: " << countTurner << endl;
-        return { countLocksmith, countTurner };
-    }
-};
-
-int main() {
-    setlocale(LC_ALL, "English");
-
-    const int N = 2;
-    vector<Factory> factories(N);
-
-    for (int i = 0; i < N; ++i) {
-        cout << "Enter the name of factory " << i + 1 << ": ";
-        cin >> factories[i].name;
-        factories[i].inputEmployees();
-        cout << endl;
-    }
-    int locksmith=0, turner=0;
-   
-    for (const auto& factory : factories) {
-        pair<int, int> counts = factory.countEmployees();
-        locksmith += counts.first;
-        turner += counts.second;
-        cout << endl;
-    }
-    cout << "Number of locksmiths: " << locksmith << endl;
-    cout << "Number of turners: " << turner << endl;
-
-    return 0;
-}
+ 
+//////////////////////////////////////////////////////////////////////
+// Task 3
+//struct Employee {
+//public:
+//	    int id;
+//	    string surname;
+//		int age;
+//		string position;
+//		double averageSalary;
+//
+//	
+//	    void print() {
+//	        cout << "id: " << id << "\n";
+//	        cout << "surname: " << surname<<"\n";
+//			cout << "age: " << age << "\n";
+//	        cout << "position: " << position << "\n";
+//			cout << "average salary: " << averageSalary << "\n";
+//	
+//	    }
+//
+//};
+//
+//struct Factory {
+//    string name;
+//    vector<Employee> employees;
+//
+//    void inputEmployees() {
+//        int n;
+//        cout << "Enter the number of employees at the " << name << " factory: ";
+//        cin >> n;
+//
+//        for (int i = 0; i < n; ++i) {
+//            Employee employee;
+//
+//            cout << "Enter information for employee " << i + 1 << ":\n";
+//            cout << "ID: ";
+//            cin >> employee.id;
+//            cout << "Surname: ";
+//            cin >> employee.surname;
+//            cout << "Age: ";
+//            cin >> employee.age;
+//            cout << "Position: ";
+//            cin >> employee.position;
+//            cout << "Average Salary: ";
+//            cin >> employee.averageSalary;
+//
+//            employees.push_back(employee);
+//        }
+//    }
+//
+//    pair<int, int>  countEmployees() const {
+//        int countLocksmith = 0;
+//        int countTurner = 0;
+//
+//        for (const auto& employee : employees) {
+//            if (employee.position == "locksmith") {
+//                countLocksmith++;
+//            }
+//            else if (employee.position == "turner") {
+//                countTurner++;
+//            }
+//        }
+//
+//        cout << "Number of locksmiths at the " << name << " factory: " << countLocksmith << endl;
+//        cout << "Number of turners at the " << name << " factory: " << countTurner << endl;
+//        return { countLocksmith, countTurner };
+//    }
+//};
+//
+//int main() {
+//    setlocale(LC_ALL, "English");
+//
+//    const int N = 2;
+//    vector<Factory> factories(N);
+//
+//    for (int i = 0; i < N; ++i) {
+//        cout << "Enter the name of factory " << i + 1 << ": ";
+//        cin >> factories[i].name;
+//        factories[i].inputEmployees();
+//        cout << endl;
+//    }
+//    int locksmith=0, turner=0;
+//   
+//    for (const auto& factory : factories) {
+//        pair<int, int> counts = factory.countEmployees();
+//        locksmith += counts.first;
+//        turner += counts.second;
+//        cout << endl;
+//    }
+//    cout << "Number of locksmiths: " << locksmith << endl;
+//    cout << "Number of turners: " << turner << endl;
+//
+//    return 0;
+//}
