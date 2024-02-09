@@ -363,119 +363,119 @@
 
 ///////////////////////////////////////////////////////
 // Task 3
-#include <iostream>
-#include <fstream>
-#include <stack>
-#include <string>
-using namespace std;
-class TrainSortingNode {
-private:
-    std::stack<int> leftDirection;  
-    std::stack<int> rightDirection; 
-
-public:
-    void addWagon(int wagon, bool isLeftDirection) {
-        if (isLeftDirection) {
-            leftDirection.push(wagon);
-            std::cout << "Added wagon " << wagon << " to the left direction.\n";
-        }
-        else {
-            rightDirection.push(wagon);
-            std::cout << "Added wagon " << wagon << " to the right direction.\n";
-        }
-    }
-
-    void removeWagon(bool isLeftDirection) {
-        if (isLeftDirection) {
-            if (!leftDirection.empty()) {
-                std::cout << "Removed wagon " << leftDirection.top() << " from the left direction.\n";
-                leftDirection.pop();
-            }
-            else {
-                std::cout << "Left direction is empty. Cannot remove wagon.\n";
-            }
-        }
-        else {
-            if (!rightDirection.empty()) {
-                std::cout << "Removed wagon " << rightDirection.top() << " from the right direction.\n";
-                rightDirection.pop();
-            }
-            else {
-                std::cout << "Right direction is empty. Cannot remove wagon.\n";
-            }
-        }
-    }
-
-    void displayContents() const {
-        cout << "Left Direction: ";
-        displayStackContents(leftDirection);
-        cout << "Right Direction: ";
-        displayStackContents(rightDirection);
-    }
-
-private:
-    // Helper method to display the contents of a stack
-    void displayStackContents(const stack<int>& directionStack) const {
-        if (directionStack.empty()) {
-            cout << "Empty";
-        }
-        else {
-            stack<int> tempStack = directionStack;
-            while (!tempStack.empty()) {
-                cout << tempStack.top() << " ";
-                tempStack.pop();
-            }
-        }
-        cout << "\n";
-    }
-};
-
-int main() {
-    TrainSortingNode sortingNode;
-
-    int choice;
-    do {
-        std::cout << "\nMenu:\n";
-        std::cout << "1. Add Wagon\n";
-        std::cout << "2. Remove Wagon\n";
-        std::cout << "3. Display Contents\n";
-        std::cout << "0. Exit\n";
-        std::cout << "Enter your choice: ";
-        std::cin >> choice;
-
-        switch (choice) {
-        case 1: {
-            int wagon, directionChoice;
-            std::cout << "Enter Wagon Number: ";
-            std::cin >> wagon;
-            std::cout << "Select Direction (1. Left / 2. Right): ";
-            std::cin >> directionChoice;
-
-            bool isLeftDirection = (directionChoice == 1);
-            sortingNode.addWagon(wagon, isLeftDirection);
-            break;
-        }
-        case 2: {
-            int directionChoice;
-            std::cout << "Select Direction to Remove Wagon (1. Left / 2. Right): ";
-            std::cin >> directionChoice;
-
-            bool isLeftDirection = (directionChoice == 1);
-            sortingNode.removeWagon(isLeftDirection);
-            break;
-        }
-        case 3:
-            sortingNode.displayContents();
-            break;
-        case 0:
-            std::cout << "Exiting...\n";
-            break;
-        default:
-            std::cout << "Invalid choice. Please try again.\n";
-        }
-    } while (choice != 0);
-
-     
-
-    return 0;
-}
+//#include <iostream>
+//#include <fstream>
+//#include <stack>
+//#include <string>
+//using namespace std;
+//class TrainSortingNode {
+//private:
+//    std::stack<int> leftDirection;  
+//    std::stack<int> rightDirection; 
+//
+//public:
+//    void addWagon(int wagon, bool isLeftDirection) {
+//        if (isLeftDirection) {
+//            leftDirection.push(wagon);
+//            std::cout << "Added wagon " << wagon << " to the left direction.\n";
+//        }
+//        else {
+//            rightDirection.push(wagon);
+//            std::cout << "Added wagon " << wagon << " to the right direction.\n";
+//        }
+//    }
+//
+//    void removeWagon(bool isLeftDirection) {
+//        if (isLeftDirection) {
+//            if (!leftDirection.empty()) {
+//                std::cout << "Removed wagon " << leftDirection.top() << " from the left direction.\n";
+//                leftDirection.pop();
+//            }
+//            else {
+//                std::cout << "Left direction is empty. Cannot remove wagon.\n";
+//            }
+//        }
+//        else {
+//            if (!rightDirection.empty()) {
+//                std::cout << "Removed wagon " << rightDirection.top() << " from the right direction.\n";
+//                rightDirection.pop();
+//            }
+//            else {
+//                std::cout << "Right direction is empty. Cannot remove wagon.\n";
+//            }
+//        }
+//    }
+//
+//    void displayContents() const {
+//        cout << "Left Direction: ";
+//        displayStackContents(leftDirection);
+//        cout << "Right Direction: ";
+//        displayStackContents(rightDirection);
+//    }
+//
+//private:
+//    // Helper method to display the contents of a stack
+//    void displayStackContents(const stack<int>& directionStack) const {
+//        if (directionStack.empty()) {
+//            cout << "Empty";
+//        }
+//        else {
+//            stack<int> tempStack = directionStack;
+//            while (!tempStack.empty()) {
+//                cout << tempStack.top() << " ";
+//                tempStack.pop();
+//            }
+//        }
+//        cout << "\n";
+//    }
+//};
+//
+//int main() {
+//    TrainSortingNode sortingNode;
+//
+//    int choice;
+//    do {
+//        std::cout << "\nMenu:\n";
+//        std::cout << "1. Add Wagon\n";
+//        std::cout << "2. Remove Wagon\n";
+//        std::cout << "3. Display Contents\n";
+//        std::cout << "0. Exit\n";
+//        std::cout << "Enter your choice: ";
+//        std::cin >> choice;
+//
+//        switch (choice) {
+//        case 1: {
+//            int wagon, directionChoice;
+//            std::cout << "Enter Wagon Number: ";
+//            std::cin >> wagon;
+//            std::cout << "Select Direction (1. Left / 2. Right): ";
+//            std::cin >> directionChoice;
+//
+//            bool isLeftDirection = (directionChoice == 1);
+//            sortingNode.addWagon(wagon, isLeftDirection);
+//            break;
+//        }
+//        case 2: {
+//            int directionChoice;
+//            std::cout << "Select Direction to Remove Wagon (1. Left / 2. Right): ";
+//            std::cin >> directionChoice;
+//
+//            bool isLeftDirection = (directionChoice == 1);
+//            sortingNode.removeWagon(isLeftDirection);
+//            break;
+//        }
+//        case 3:
+//            sortingNode.displayContents();
+//            break;
+//        case 0:
+//            std::cout << "Exiting...\n";
+//            break;
+//        default:
+//            std::cout << "Invalid choice. Please try again.\n";
+//        }
+//    } while (choice != 0);
+//
+//     
+//
+//    return 0;
+//}
