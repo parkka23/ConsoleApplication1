@@ -78,49 +78,49 @@
 ///////////////////////////////////////////
 
 // Task 2
-#include <iostream>
-#include <string>
-
-class Nomenclature {
-private:
-    std::string itemName;
-    double wholesalePrice;
-    double retailMarkup;
-    int stockQuantity;
-
-public:
-    Nomenclature(const std::string& name, double wholesale, double markup, int quantity)
-        : itemName(name), wholesalePrice(wholesale), retailMarkup(markup), stockQuantity(quantity) {}
-
-    ~Nomenclature() {
-        std::cout << "Object for item '" << itemName << "' has been destroyed.\n";
-    }
-
-    double calculateNetIncome(int soldQuantity) const {
-        double netIncome = (retailMarkup - wholesalePrice) * soldQuantity;
-        return netIncome;
-    }
-
-    void displayItemDetails() const {
-        std::cout << "Item Name: " << itemName << "\n";
-        std::cout << "Wholesale Price: " << wholesalePrice << "\n";
-        std::cout << "Retail Markup: " << retailMarkup << "\n";
-        std::cout << "Stock Quantity: " << stockQuantity << "\n";
-    }
-};
-
-int main() {
-    Nomenclature item("Product", 50, 70, 100);
-
-    std::cout << "Item Details:\n";
-    item.displayItemDetails();
-
-    int soldQuantity = 20;
-    double netIncome = item.calculateNetIncome(soldQuantity);
-    std::cout << "Net Income for selling " << soldQuantity << " items: " << netIncome << "\n";
-
-    return 0;
-}
+//#include <iostream>
+//#include <string>
+//
+//class Nomenclature {
+//private:
+//    std::string itemName;
+//    double wholesalePrice;
+//    double retailMarkup;
+//    int stockQuantity;
+//
+//public:
+//    Nomenclature(const std::string& name, double wholesale, double markup, int quantity)
+//        : itemName(name), wholesalePrice(wholesale), retailMarkup(markup), stockQuantity(quantity) {}
+//
+//    ~Nomenclature() {
+//        std::cout << "Object for item '" << itemName << "' has been destroyed.\n";
+//    }
+//
+//    double calculateNetIncome(int soldQuantity) const {
+//        double netIncome = (retailMarkup - wholesalePrice) * soldQuantity;
+//        return netIncome;
+//    }
+//
+//    void displayItemDetails() const {
+//        std::cout << "Item Name: " << itemName << "\n";
+//        std::cout << "Wholesale Price: " << wholesalePrice << "\n";
+//        std::cout << "Retail Markup: " << retailMarkup << "\n";
+//        std::cout << "Stock Quantity: " << stockQuantity << "\n";
+//    }
+//};
+//
+//int main() {
+//    Nomenclature item("Product", 50, 70, 100);
+//
+//    std::cout << "Item Details:\n";
+//    item.displayItemDetails();
+//
+//    int soldQuantity = 20;
+//    double netIncome = item.calculateNetIncome(soldQuantity);
+//    std::cout << "Net Income for selling " << soldQuantity << " items: " << netIncome << "\n";
+//
+//    return 0;
+//}
 
 ///////////////////////////////
 
