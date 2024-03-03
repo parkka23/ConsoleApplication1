@@ -112,126 +112,118 @@
 //
 //// Task 2
 //
-////#include <iostream>
-////
-////class Fraction {
-////private:
-////    double chislo;
-////
-////public:
-////    Fraction() : chislo(0.0) {} 
-////    Fraction(double value) : chislo(value) {} 
-////
-////    Fraction operator+(const Fraction& other) const {
-////        return Fraction(chislo + other.chislo);
-////    }
-////
-////    Fraction operator-(const Fraction& other) const {
-////        return Fraction(chislo - other.chislo);
-////    }
-////
-////    Fraction operator*(const Fraction& other) const {
-////        return Fraction(chislo * other.chislo);
-////    }
-////
-////    Fraction operator/(const Fraction& other) const {
-////        if (other.chislo == 0.0) {
-////            throw std::runtime_error("Division by zero");
-////        }
-////        return Fraction(chislo / other.chislo);
-////    }
-////
-////    // Перегрузка унарной операции инкремента (постфиксная форма)
-////    Fraction operator++(int) {
-////        Fraction temp(chislo);
-////        chislo += 1.0;
-////        return temp;
-////    }
-////
-////    // Перегрузка унарной операции инкремента (префиксная форма)
-////    Fraction& operator++() {
-////        chislo += 1.0;
-////        return *this;
-////    }
-////
-////    // Вывод значения
-////    friend std::ostream& operator<<(std::ostream& os, const Fraction& fraction) {
-////        os << fraction.chislo;
-////        return os;
-////    }
-////};
-////
-////int main() {
-////    // Пример использования класса Fraction
-////    Fraction a(3.0);
-////    Fraction b(2.5);
-////    Fraction c = a + b;
-////    Fraction d = a - b;
-////    Fraction e = a * b;
-////    Fraction f = a / b;
-////
-////    std::cout << "a + b = " << c << std::endl;
-////    std::cout << "a - b = " << d << std::endl;
-////    std::cout << "a * b = " << e << std::endl;
-////    std::cout << "a / b = " << f << std::endl;
-////
-////    Fraction g = ++a; // Префиксная форма инкремента
-////    Fraction h = b++; // Постфиксная форма инкремента
-////
-////    std::cout << "++a = " << g << std::endl;
-////    std::cout << "b++ = " << h << std::endl;
-////
-////    return 0;
-////}
+//#include <iostream>
+//
+//class Fraction {
+//private:
+//    double chislo;
+//
+//public:
+//    Fraction() : chislo(0.0) {} 
+//    Fraction(double value) : chislo(value) {} 
+//
+//    Fraction operator+(const Fraction& other) const {
+//        return Fraction(chislo + other.chislo);
+//    }
+//
+//    Fraction operator-(const Fraction& other) const {
+//        return Fraction(chislo - other.chislo);
+//    }
+//
+//    Fraction operator*(const Fraction& other) const {
+//        return Fraction(chislo * other.chislo);
+//    }
+//
+//    Fraction operator/(const Fraction& other) const {
+//        if (other.chislo == 0.0) {
+//            throw std::runtime_error("Division by zero");
+//        }
+//        return Fraction(chislo / other.chislo);
+//    }
+//
+//    // Перегрузка унарной операции инкремента (постфиксная форма)
+//    Fraction operator++(int) {
+//        Fraction temp(chislo);
+//        chislo += 1.0;
+//        return temp;
+//    }
+//
+//    // Перегрузка унарной операции инкремента (префиксная форма)
+//    Fraction& operator++() {
+//        chislo += 1.0;
+//        return *this;
+//    }
+//
+//    // Вывод значения
+//    friend std::ostream& operator<<(std::ostream& os, const Fraction& fraction) {
+//        os << fraction.chislo;
+//        return os;
+//    }
+//};
+//
+//int main() {
+//    // Пример использования класса Fraction
+//    Fraction a(3.0);
+//    Fraction b(2.5);
+//    Fraction c = a + b;
+//    Fraction d = a - b;
+//    Fraction e = a * b;
+//    Fraction f = a / b;
+//
+//    std::cout << "a + b = " << c << std::endl;
+//    std::cout << "a - b = " << d << std::endl;
+//    std::cout << "a * b = " << e << std::endl;
+//    std::cout << "a / b = " << f << std::endl;
+//
+//    Fraction g = ++a; // Префиксная форма инкремента
+//    Fraction h = b++; // Постфиксная форма инкремента
+//
+//    std::cout << "++a = " << g << std::endl;
+//    std::cout << "b++ = " << h << std::endl;
+//
+//    return 0;
+//}
 //
 //
 //// Task 3
 ////
-////#include <iostream>
-////
-////class Rectangle {
-////private:
-////    double length;
-////    double width;
-////
-////public:
-////    Rectangle() : length(0.0), width(0.0) {}
-////
-////    Rectangle(double len, double wid) : length(len), width(wid) {}
-////
-////    double rect_area(double len, double wid) {
-////        return len * wid;
-////    }
-////
-////    double rect_area(double side) {
-////        return side * side;
-////    }
-////
-////    void printInfo() {
-////        std::cout << "Длина: " << length << std::endl;
-////        std::cout << "Ширина: " << width << std::endl;
-////        std::cout << "Площадь прямоугольника: " << rect_area(length, width) << std::endl;
-////    }
-////};
-////
-////int main() {
-////    double length, width, side;
-////
-////    std::cout << "Введите длину прямоугольника: ";
-////    std::cin >> length;
-////
-////    std::cout << "Введите ширину прямоугольника: ";
-////    std::cin >> width;
-////
-////    Rectangle rectangle(length, width);
-////
-////    Rectangle square;
-////
-////    rectangle.printInfo();
-////
-////    std::cout << "Введите длину стороны квадрата: ";
-////    std::cin >> side;
-////
-////    std::cout << "Площадь квадрата: "<< square.rect_area(side)<<std::endl;
-////    return 0;
-////}
+#include <iostream>
+#include <Windows.h>
+
+class Rectangle1 { 
+
+public:
+   
+    double rect_area(double a, double b) const {
+        return a * b;
+    }
+
+    double rect_area(double a) const {
+        return a * a;
+    }
+
+};
+
+int main() {
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+
+    double length, width, side;
+
+    std::cout << "Введите длину прямоугольника: ";
+    std::cin >> length;
+
+    std::cout << "Введите ширину прямоугольника: ";
+    std::cin >> width;
+
+    Rectangle1 rectangle;
+    std::cout << "Площадь прямоугольника: " << rectangle.rect_area(length, width) << std::endl;
+
+
+    Rectangle1 square;
+    std::cout << "Введите длину стороны квадрата: ";
+    std::cin >> side;
+
+    std::cout << "Площадь квадрата: " << square.rect_area(side) << std::endl;
+    return 0;
+}
