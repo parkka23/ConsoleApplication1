@@ -1,73 +1,73 @@
 // Task 1
-#include <iostream>
-
-class Array {
-protected:
-    static const int maxSize = 100;  
-    unsigned arr[maxSize];
-    int size;
-
-public:
-    Array(int newSize, unsigned initialValue = 0) : size(newSize) {
-        for (int i = 0; i < size; ++i) {
-            arr[i] = initialValue;
-        }
-    }
-
-    unsigned getElement(int index) const {
-        if (index >= 0 && index < size) {
-            return arr[index];
-        }
-        return 0; 
-    }
-
-    virtual void addArray(const Array& other) const {
-       std::cout << "Base Array Addition:" << std::endl;
-        for (int i = 0; i < size; ++i) {
-            std::cout << getElement(i) + other.getElement(i) << " ";
-        }
-        std::cout << std::endl;
-    }
-};
-
-class ArrayAddition1 : public Array {
-public:
-    ArrayAddition1(int newSize, unsigned initialValue = 0) : Array(newSize, initialValue) {}
-
-    void addArray(const Array& other) const override {
-        std::cout << "ArrayAddition1:" << std::endl;
-        for (int i = 0; i < size; ++i) {
-            std::cout << arr[i] + other.getElement(i)  << " ";
-        }
-        std::cout << std::endl;
-    }
-};
-
-class ArrayAddition2 : public Array {
-public:
-    ArrayAddition2(int newSize, unsigned initialValue = 0) : Array(newSize, initialValue) {}
-
-    void addArray(const Array& other) const override {
-        std::cout << "ArrayAddition2:" << std::endl;
-        for (int i = 0; i < size; ++i) {
-            std::cout << arr[i] + other.getElement(i) << " ";
-        }
-        std::cout << std::endl;
-    }
-};
-
-int main() {
-    Array baseArray(3, 1);
-    ArrayAddition1 array1(3, 2);
-    ArrayAddition2 array2(3, 3);
-
-   
-    baseArray.addArray(array1);  
-    array1.addArray(array2);     
-    array2.addArray(baseArray);  
-
-    return 0;
-}
+//#include <iostream>
+//
+//class Array {
+//protected:
+//    static const int maxSize = 100;  
+//    unsigned arr[maxSize];
+//    int size;
+//
+//public:
+//    Array(int newSize, unsigned initialValue = 0) : size(newSize) {
+//        for (int i = 0; i < size; ++i) {
+//            arr[i] = initialValue;
+//        }
+//    }
+//
+//    unsigned getElement(int index) const {
+//        if (index >= 0 && index < size) {
+//            return arr[index];
+//        }
+//        return 0; 
+//    }
+//
+//    virtual void addArray(const Array& other) const {
+//       std::cout << "Base Array Addition:" << std::endl;
+//        for (int i = 0; i < size; ++i) {
+//            std::cout << getElement(i) + other.getElement(i) << " ";
+//        }
+//        std::cout << std::endl;
+//    }
+//};
+//
+//class ArrayAddition1 : public Array {
+//public:
+//    ArrayAddition1(int newSize, unsigned initialValue = 0) : Array(newSize, initialValue) {}
+//
+//    void addArray(const Array& other) const override {
+//        std::cout << "ArrayAddition1:" << std::endl;
+//        for (int i = 0; i < size; ++i) {
+//            std::cout << arr[i] + other.getElement(i)  << " ";
+//        }
+//        std::cout << std::endl;
+//    }
+//};
+//
+//class ArrayAddition2 : public Array {
+//public:
+//    ArrayAddition2(int newSize, unsigned initialValue = 0) : Array(newSize, initialValue) {}
+//
+//    void addArray(const Array& other) const override {
+//        std::cout << "ArrayAddition2:" << std::endl;
+//        for (int i = 0; i < size; ++i) {
+//            std::cout << arr[i] + other.getElement(i) << " ";
+//        }
+//        std::cout << std::endl;
+//    }
+//};
+//
+//int main() {
+//    Array baseArray(3, 1);
+//    ArrayAddition1 array1(3, 2);
+//    ArrayAddition2 array2(3, 3);
+//
+//   
+//    baseArray.addArray(array1);  
+//    array1.addArray(array2);     
+//    array2.addArray(baseArray);  
+//
+//    return 0;
+//}
 
 //////////////////////////////////////////
 

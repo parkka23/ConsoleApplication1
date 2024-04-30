@@ -128,12 +128,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="lab1.cpp" />
+    <ClCompile Include="lab10.cpp" />
     <ClCompile Include="lab2.cpp" />
     <ClCompile Include="lab3.cpp" />
     <ClCompile Include="lab4.cpp" />
     <ClCompile Include="lab5.cpp" />
     <ClCompile Include="lab6.cpp" />
     <ClCompile Include="lab7.cpp" />
+    <ClCompile Include="lab8.cpp" />
+    <ClCompile Include="lab9.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
