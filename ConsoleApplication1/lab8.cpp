@@ -1,7 +1,8 @@
 //#include <iostream>
 //
-//template<typename T>
-//T findMax(const T* arr, int size) {
+//template<typename T, typename M>
+//T findMax(const T* arr, M m,int size) {
+//    std::cout << std::endl<<m;
 //    T max = arr[0];
 //    for (int i = 1; i < size; ++i) {
 //        if (arr[i] > max) {
@@ -30,7 +31,7 @@
 //    for (int i = 0; i < intSize; ++i) {
 //        std::cout << intArr[i] << " ";
 //    }
-//    std::cout << std::endl << "Max of intArr: " << findMax(intArr, intSize) << std::endl;
+//    std::cout << std::endl << "Max of intArr: " << findMax(intArr, 2, intSize) << std::endl;
 //    sortArray(intArr, intSize);
 //    std::cout << "Sorted intArr: ";
 //    for (int i = 0; i < intSize; ++i) {
@@ -43,7 +44,7 @@
 //    for (int i = 0; i < doubleSize; ++i) {
 //        std::cout << doubleArr[i] << " ";
 //    }
-//    std::cout << std::endl << "Max of doubleArr: " << findMax(doubleArr, doubleSize) << std::endl;
+//    std::cout << std::endl << "Max of doubleArr: " << findMax(doubleArr, "2",doubleSize) << std::endl;
 //    sortArray(doubleArr, doubleSize);
 //    std::cout << "Sorted doubleArr: ";
 //    for (int i = 0; i < doubleSize; ++i) {
@@ -57,7 +58,7 @@
 //    for (int i = 0; i < charSize; ++i) {
 //        std::cout << charArr[i] << " ";
 //    }
-//    std::cout << std::endl << "Max of charArr: " << findMax(charArr, charSize) << std::endl;
+//    std::cout << std::endl << "Max of charArr: " << findMax(charArr, 1.2, charSize) << std::endl;
 //    sortArray(charArr, charSize);
 //    std::cout << "Sorted charArr: ";
 //    for (int i = 0; i < charSize; ++i) {
@@ -65,11 +66,10 @@
 //    }
 //    std::cout << std::endl;
 //
-//
 //    return 0;
 //}
 
-//
+
 //
 //#include <iostream>
 //#include <cstdlib>
@@ -84,7 +84,7 @@
 //
 //public:
 //    Array() {
-//        srand(time(0));
+//        //srand(time(0));
 //       
 //        for (size_t i = 0; i < N; ++i) {
 //            array1[i] = static_cast<T>(1 + rand() % 100);
@@ -125,31 +125,31 @@
 //
 //    return 0;
 //}
-
-
+//
+//
 //
 //#include <iostream>
 //#include <string>
 //#include <vector>
 //using namespace std;
 //
-//template<typename T>
-//class Stack {
+//template<typename t>
+//class stack {
 //private:
-//    std::vector<T> elements;
+//    std::vector<t> elements;
 //
 //public:
-//    void push(const T& element) {
+//    void push(const t& element) {
 //        elements.push_back(element);
 //    }
 //
-//    T pop() {
+//    t pop() {
 //        if (elements.empty()) {
-//            throw std::runtime_error("Stack is empty");
+//            throw std::runtime_error("stack is empty");
 //        }
-//        T topElement = elements.back();
+//        t topelement = elements.back();
 //        elements.pop_back();
-//        return topElement;
+//        return topelement;
 //    }
 //
 //    size_t size() const {
@@ -157,7 +157,7 @@
 //    }
 //};
 //
-//struct Worker {
+//struct worker {
 //    std::string surname;
 //    int age;
 //    std::string position;
@@ -165,52 +165,51 @@
 //};
 //
 //int main() {
-//    Stack<Worker> workersStack;
+//    stack<worker> workersstack;
 //
-//    int factoryCount;
-//    std::cout << "Enter the number of factories: ";
-//    std::cin >> factoryCount;
+//    int factorycount;
+//    std::cout << "enter the number of factories: ";
+//    std::cin >> factorycount;
 //
-//    for (int i = 0; i < factoryCount; ++i) {
-//        int workerCount;
-//        std::cout << "Enter the number of workers in factory " << i + 1 << ": ";
-//        std::cin >> workerCount;
+//    for (int i = 0; i < factorycount; ++i) {
+//        int workercount;
+//        std::cout << "enter the number of workers in factory " << i + 1 << ": ";
+//        std::cin >> workercount;
 //
-//        for (int j = 0; j < workerCount; ++j) {
-//            Worker worker;
-//            std::cout << "Enter worker's surname, age, specialization, and salary: ";
+//        for (int j = 0; j < workercount; ++j) {
+//            worker worker;
+//            std::cout << "enter worker's surname, age, specialization, and salary: ";
 //            std::cin >> worker.surname >> worker.age >> worker.position >> worker.salary;
-//            workersStack.push(worker);
+//            workersstack.push(worker);
 //        }
 //    }
 //
-//    int locksmithCount = 0;
-//    int turnerCount = 0;
+//    int locksmithcount = 0;
+//    int turnercount = 0;
 //
-//    Stack<Worker> tempStack; 
+//    stack<worker> tempstack; 
 //
-//    while (workersStack.size() > 0) {
-//        Worker worker = workersStack.pop();
-//        tempStack.push(worker); 
+//    while (workersstack.size() > 0) {
+//        worker worker = workersstack.pop();
+//        tempstack.push(worker); 
 //
 //        if (worker.position == "locksmith") {
-//            ++locksmithCount;
+//            ++locksmithcount;
 //        }
 //        else if (worker.position == "turner") {
-//            ++turnerCount;
+//            ++turnercount;
 //        }
 //    }
 //
-//    while (tempStack.size() > 0) {
-//        Worker worker = tempStack.pop();
-//        workersStack.push(worker); 
+//    while (tempstack.size() > 0) {
+//        worker worker = tempstack.pop();
+//        workersstack.push(worker); 
 //    }
 //
-//    std::cout << "Number of locksmiths: " << locksmithCount << std::endl;
-//    std::cout << "Number of turners: " << turnerCount << std::endl;
+//    std::cout << "number of locksmiths: " << locksmithcount << std::endl;
+//    std::cout << "number of turners: " << turnercount << std::endl;
 //
 //    return 0;
 //}
- //
-
-
+// 
+//

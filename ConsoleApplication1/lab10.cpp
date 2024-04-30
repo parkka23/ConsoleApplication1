@@ -10,8 +10,8 @@
 //    static int fire(int n) {
 //        double chance_of_hit = 1 - std::pow(1 - p, n);
 //        double random_number = static_cast<double>(rand()) / RAND_MAX;
-//        std::cout << "chance_of_hit: " << chance_of_hit << std::endl;
-//        std::cout << "random_number: " << random_number << std::endl;
+//        //std::cout << "chance_of_hit: " << chance_of_hit << std::endl;
+//       // std::cout << "random_number: " << random_number << std::endl;
 //        // Генерация случайного числа от 0 до 1
 //        if (random_number < chance_of_hit) {
 //            return 1; // Цель поражена
